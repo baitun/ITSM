@@ -1,5 +1,6 @@
 import React from 'react'
 import { Table } from 'antd';
+import './TableTickets.css'
 
 const columns = [
   {
@@ -28,15 +29,7 @@ const columns = [
   {
     dataIndex: 'status',
     title: 'Status'
-  },
-  // {
-  //   dataIndex: 'bdate',
-  //   title: 'Date start'
-  // },
-  // {
-  //   dataIndex: 'edate',
-  //   title: 'Date end'
-  // },
+  }
 ];
 
 const tickets = require('./data/tickets.json');
@@ -61,6 +54,8 @@ class TableTickets extends React.Component {
         rowKey='id'
         onChange={this.handleTableChange}
         expandedRowRender={TicketDetails}
+        pagination={false}
+        scroll={{ x: true }}
       />
     );
   }
