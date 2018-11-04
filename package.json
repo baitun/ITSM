@@ -1,7 +1,7 @@
 {
   "name": "itsm",
-  "version": "0.1.0",
-  "private": true,
+  "author": "Yury Savin <https://github.com/baitun>",
+  "homepage": "https://baitun.github.io/ITSM",
   "dependencies": {
     "antd": "^3.10.4",
     "react": "^16.6.0",
@@ -9,6 +9,8 @@
     "react-scripts": "2.1.1"
   },
   "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
