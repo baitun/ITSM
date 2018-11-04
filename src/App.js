@@ -1,11 +1,10 @@
 import React from 'react';
-import './App.css';
-import Table from 'antd/lib/table';
+import TableTickets from './TableTickets';
 
 class App extends React.Component {
   render() {
     return (
-      <Table />
+      <TableTickets />
     );
   }
 }
