@@ -10,12 +10,12 @@ class App extends React.Component {
       <LocaleProvider locale={ru_RU}>
         <Router>
           <React.Fragment>
-            <Link to='/ITSM' >Table tickets</Link>
+            <Link to='/ITSM' >Table tickets</Link> <Link to='/ITSM/admin' >Admin</Link>
             <Switch>
-              {/* <Redirect from='/' to='/ITSM/' /> */}
-              <Route path="/" exact component={TableTickets} />
+              <Redirect exact from='/' to='/ITSM/' />
               <Route path="/ITSM" exact component={TableTickets} />
-              <Route component={() => <div>404</div>} />
+              <Route path="/ITSM/admin" exact component={() => <div>There will be an admin panel</div>} />
+              <Route component={() => <div>404. Page Not Found</div>} />
             </Switch>
           </React.Fragment>
         </Router>
