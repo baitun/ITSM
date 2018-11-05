@@ -1,7 +1,11 @@
 {
   "name": "itsm",
+  "description": "IT Service Management",
   "author": "Yury Savin <https://github.com/baitun>",
   "homepage": "https://baitun.github.io/ITSM",
+  "main": "src/index.js",
+  "repository": "https://github.com/baitun/ITSM.git",
+  "license": "MIT",
   "dependencies": {
     "antd": "^3.10.4",
     "react": "^16.6.0",
