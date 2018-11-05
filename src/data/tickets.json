@@ -18,5 +18,25 @@
     "status": "Closed",
     "bdate": "2018-02-01 09:00:00",
     "edate": "2018-02-01 10:00:00"
+  },
+  {
+    "id": "3",
+    "locality": "Saransk",
+    "system": "Mail",
+    "description": "All users have a problem with mail",
+    "entryid": "000003",
+    "status": "Closed",
+    "bdate": "2018-02-01 09:00:00",
+    "edate": "2018-02-01 10:00:00"
+  },
+  {
+    "id": "4",
+    "locality": "Chelyabinsk",
+    "system": "Internet",
+    "description": "Internet connection lost",
+    "entryid": "000004",
+    "status": "Closed",
+    "bdate": "2018-02-01 09:00:00",
+    "edate": "2018-02-01 10:00:00"
   }
 ]
