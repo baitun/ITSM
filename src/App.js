@@ -10,6 +10,7 @@ class App extends React.Component {
       <LocaleProvider locale={ru_RU}>
         <Router>
           <React.Fragment>
+            <h1>IT Service Management</h1>
             <Link to='/ITSM' >Table tickets</Link> <Link to='/ITSM/admin' >Admin</Link>
             <Switch>
               <Redirect exact from='/' to='/ITSM/' />
