@@ -41,7 +41,10 @@ const TicketDetails = (record) => {
     </div>
   );
 }
-
+/**
+ * @todo Add interactivity
+ * @body Test
+ */
 class TableTickets extends React.Component {
   handleTableChange = (pagination, filters, sorter) => {
     console.log(sorter)
