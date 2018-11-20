@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "key": "1",
     "locality": "Irkutsk",
     "system": "Billing",
     "description": "Billing doesn't work in Irkutsk from 6 am",
@@ -10,7 +10,7 @@
     "edate": ""
   },
   {
-    "id": "2",
+    "key": "2",
     "locality": "Rostov-on-Don",
     "system": "CRM",
     "description": "There is something wrong with CRM sytem",
@@ -20,7 +20,7 @@
     "edate": "2018-02-01 10:00:00"
   },
   {
-    "id": "3",
+    "key": "3",
     "locality": "Saransk",
     "system": "Mail",
     "description": "All users have a problem with mail",
@@ -30,7 +30,7 @@
     "edate": "2018-02-01 10:00:00"
   },
   {
-    "id": "4",
+    "key": "4",
     "locality": "Chelyabinsk",
     "system": "Internet",
     "description": "Internet connection lost",

@@ -58,7 +58,7 @@ class TableTickets extends React.Component {
       <Table
         columns={columns}
         dataSource={tickets}
-        rowKey="id"
+        // rowKey="id"
         onChange={this.handleTableChange}
         expandedRowRender={TicketDetails}
         pagination={false}
