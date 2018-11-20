@@ -1,44 +1,7 @@
 import React from 'react';
 import { Table } from 'antd';
 import './TableTickets.css';
-
-const columns = [
-  {
-    dataIndex: 'locality',
-    title: 'Locality (City)',
-    // filtered: true,
-    sorter: (a, b) => a.locality > b.locality,
-    onFilter: (value, record) => record.locality.indexOf(value) === 0,
-    filters: [
-      { text: 'Irkutsk', value: 'Irkutsk' },
-      { text: 'Rostov', value: 'Rostov' },
-      { text: 'Saransk', value: 'Saransk' },
-      { text: 'Chelyabinsk', value: 'Chelyabinsk' },
-    ],
-  },
-  {
-    dataIndex: 'system',
-    title: 'System name',
-    sorter: (a, b) => a.system > b.system,
-  },
-  {
-    dataIndex: 'entryid',
-    title: 'BPM Ticket',
-    render: entryid => (
-      <a
-        href={`https://bpmonline.com/?tt=${entryid}`}
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        {entryid}
-      </a>
-    ),
-  },
-  {
-    dataIndex: 'status',
-    title: 'Status',
-  },
-];
+import columns from './columns';
 
 const tickets = require('./data/tickets.json');
 
