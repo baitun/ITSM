@@ -1,6 +1,7 @@
 import React from 'react';
 import TableTickets from './TableTickets';
-import { LocaleProvider } from 'antd';
+import EditableTable from './EditableTable';
+import { LocaleProvider, Menu } from 'antd';
 import ru_RU from 'antd/lib/locale-provider/ru_RU';
 import {
   BrowserRouter as Router,
@@ -16,16 +17,27 @@ class App extends React.Component {
       <LocaleProvider locale={ru_RU}>
         <Router>
           <React.Fragment>
+            <Menu mode="horizontal" theme="dark">
+              <Menu.Item>
+                <Link to="/ITSM">Tickets</Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to="/ITSM/admin">Admin</Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to="/ITSM/edit">Edit</Link>
+              </Menu.Item>
+            </Menu>
             <h1>IT Service Management</h1>
-            <Link to="/ITSM">Table tickets</Link>{' '}
-            <Link to="/ITSM/admin">Admin</Link>
+
             <Switch>
               <Redirect exact from="/" to="/ITSM/" />
-              <Route path="/ITSM" exact component={TableTickets} />
+              <Route exact path="/ITSM" component={TableTickets} />
+              <Route exact path="/ITSM/edit" component={EditableTable} />
               <Route
-                path="/ITSM/admin"
                 exact
-                component={() => <div>There will be an admin panel</div>}
+                path="/ITSM/admin"
+                component={() => <div>Admin page is not ready yet</div>}
               />
               <Route component={() => <div>404. Page Not Found</div>} />
             </Switch>
