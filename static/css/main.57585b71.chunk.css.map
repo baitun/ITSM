@@ -1,0 +1,1 @@
+{"version":3,"sources":["C:/Users/savin/projects/itsm/src/C:/Users/savin/projects/itsm/src/TableTickets.css","main.57585b71.chunk.css"],"names":[],"mappings":"AAAA,cAAgB,kBAAoB,CCGE","file":"main.57585b71.chunk.css","sourcesContent":[".ant-table td { white-space: nowrap; }","body {\r\n  /* padding: 20px; */\r\n}\n.ant-table td { white-space: nowrap; }\n"]}
