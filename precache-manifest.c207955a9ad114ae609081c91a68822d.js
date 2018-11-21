@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "26662270e8edb1566ccd",
+    "revision": "d9cb2581f073c0785859",
     "url": "/ITSM/static/css/main.57585b71.chunk.css"
   },
   {
-    "revision": "26662270e8edb1566ccd",
-    "url": "/ITSM/static/js/main.26662270.chunk.js"
+    "revision": "d9cb2581f073c0785859",
+    "url": "/ITSM/static/js/main.d9cb2581.chunk.js"
   },
   {
     "revision": "d4ecf3b673e073ee3fe0",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/ITSM/static/js/runtime~main.de5fcd6a.js"
   },
   {
-    "revision": "b8c511cfb72f61cb7e70427f02adcdc3",
+    "revision": "9307bd4822f1427f33432c8b15642138",
     "url": "/ITSM/index.html"
   }
 ];
