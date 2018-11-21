@@ -17,7 +17,7 @@ class App extends React.Component {
     return (
       <LocaleProvider locale={ru_RU}>
         <Router>
-          <React.Fragment>
+          <>
             <Menu mode="horizontal" theme="dark">
               <Menu.Item>
                 <Link to="/ITSM">Tickets</Link>
@@ -38,7 +38,7 @@ class App extends React.Component {
               <Route exact path="/ITSM/admin" component={TableTicketsAdmin} />
               <Route component={() => <div>404. Page Not Found</div>} />
             </Switch>
-          </React.Fragment>
+          </>
         </Router>
       </LocaleProvider>
     );
