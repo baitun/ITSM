@@ -22,6 +22,35 @@ const TicketDetailsAdmin = record => {
   );
 };
 class TableTickets extends React.Component {
+  state = {
+    visible: false,
+  };
+
+  showModal = () => {
+    this.setState({ visible: true });
+  };
+
+  handleCancel = () => {
+    this.setState({ visible: false });
+  };
+
+  handleCreate = () => {
+    const form = this.formRef.props.form;
+    form.validateFields((err, values) => {
+      if (err) {
+        return;
+      }
+
+      console.log('Received values of form: ', values);
+      form.resetFields();
+      this.setState({ visible: false });
+    });
+  };
+
+  saveFormRef = formRef => {
+    this.formRef = formRef;
+  };
+
   handleTableChange = (pagination, filters, sorter) => {
     console.log(sorter);
   };
@@ -29,7 +58,7 @@ class TableTickets extends React.Component {
     return (
       <>
         <Button type="primary" onClick={this.showModal}>
-          New Collection
+          New Ticket
         </Button>
         <ModalForm
           wrappedComponentRef={this.saveFormRef}

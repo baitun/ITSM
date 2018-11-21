@@ -9,7 +9,7 @@ const ModalForm = Form.create()(
       return (
         <Modal
           visible={visible}
-          title="Create a new collection"
+          title="Create a new Ticket"
           okText="Create"
           onCancel={onCancel}
           onOk={onCreate}
