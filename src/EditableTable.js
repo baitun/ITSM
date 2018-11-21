@@ -106,7 +106,6 @@ class EditableTable extends React.Component {
                   </Popconfirm>
                 </span>
               ) : (
-                // <button onClick={() => this.edit(record.key)}>Edit</button>
                 <Button
                   shape="circle"
                   icon="edit"

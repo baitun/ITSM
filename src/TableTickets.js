@@ -6,12 +6,20 @@ import columns from './columns';
 const tickets = require('./data/tickets.json');
 
 const TicketDetails = record => {
-  return <div>{record.description}</div>;
+  return (
+    <>
+      <div>
+        <b>Description:</b> {record.description}
+      </div>
+      <div>
+        <b>Date start:</b> {record.bdate}
+      </div>
+      <div>
+        <b>Date end:</b> {record.edate}
+      </div>
+    </>
+  );
 };
-/**
- * @todo Add interactivity
- * @body Test
- */
 class TableTickets extends React.Component {
   handleTableChange = (pagination, filters, sorter) => {
     console.log(sorter);
