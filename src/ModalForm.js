@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Modal, Input, Radio } from 'antd';
+import { Form, Modal, Input, Radio, Select } from 'antd';
 
 const ModalForm = Form.create()(
   class extends React.Component {
@@ -14,29 +14,32 @@ const ModalForm = Form.create()(
           onCancel={onCancel}
           onOk={onCreate}
         >
-          <Form layout="vertical">
-            <Form.Item label="Title">
-              {getFieldDecorator('title', {
-                rules: [
-                  {
-                    required: true,
-                    message: 'Please input the title of collection!',
-                  },
-                ],
-              })(<Input />)}
+          <Form>
+            <Form.Item label="Locality (City)">
+              {getFieldDecorator('title', { rules: [{ required: true }] })(
+                <Select>
+                  <Select.Option value="0">Irkutsk</Select.Option>
+                  <Select.Option value="1">Rostov-on-Don</Select.Option>
+                  <Select.Option value="2">Saransk</Select.Option>
+                  <Select.Option value="3">Chelyabinsk</Select.Option>
+                </Select>
+              )}
+            </Form.Item>
+            <Form.Item label="System">
+              {getFieldDecorator('system', { rules: [{ required: true }] })(
+                <Select>
+                  <Select.Option value="0">BPM</Select.Option>
+                  <Select.Option value="1">CRM</Select.Option>
+                  <Select.Option value="2">Mail</Select.Option>
+                  <Select.Option value="3">Internet</Select.Option>
+                </Select>
+              )}
             </Form.Item>
             <Form.Item label="Description">
               {getFieldDecorator('description')(<Input type="textarea" />)}
             </Form.Item>
-            <Form.Item className="collection-create-form_last-form-item">
-              {getFieldDecorator('modifier', {
-                initialValue: 'public',
-              })(
-                <Radio.Group>
-                  <Radio value="public">Public</Radio>
-                  <Radio value="private">Private</Radio>
-                </Radio.Group>
-              )}
+            <Form.Item label="BPM Ticket ID">
+              {getFieldDecorator('descentryidription')(<Input />)}
             </Form.Item>
           </Form>
         </Modal>

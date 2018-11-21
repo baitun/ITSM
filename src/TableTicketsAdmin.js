@@ -23,7 +23,7 @@ const TicketDetailsAdmin = record => {
 };
 class TableTickets extends React.Component {
   state = {
-    visible: false,
+    visible: true,
   };
 
   showModal = () => {
