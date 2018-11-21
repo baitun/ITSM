@@ -1,11 +1,12 @@
 import React from 'react';
-import { Table } from 'antd';
+import { Table, Button } from 'antd';
 import './TableTickets.css';
 import columns from './columns';
+import ModalForm from './ModalForm';
 
 const tickets = require('./data/tickets.json');
 
-const TicketDetails = record => {
+const TicketDetailsAdmin = record => {
   return (
     <>
       <div>
@@ -26,15 +27,26 @@ class TableTickets extends React.Component {
   };
   render() {
     return (
-      <Table
-        columns={columns}
-        dataSource={tickets}
-        // rowKey="id"
-        onChange={this.handleTableChange}
-        expandedRowRender={TicketDetails}
-        pagination={false}
-        // scroll={{ x: true }}
-      />
+      <>
+        <Button type="primary" onClick={this.showModal}>
+          New Collection
+        </Button>
+        <ModalForm
+          wrappedComponentRef={this.saveFormRef}
+          visible={this.state.visible}
+          onCancel={this.handleCancel}
+          onCreate={this.handleCreate}
+        />
+        <Table
+          columns={columns}
+          dataSource={tickets}
+          // rowKey="id"
+          onChange={this.handleTableChange}
+          expandedRowRender={TicketDetailsAdmin}
+          pagination={false}
+          // scroll={{ x: true }}
+        />
+      </>
     );
   }
 }

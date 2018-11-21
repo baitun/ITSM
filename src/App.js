@@ -1,5 +1,6 @@
 import React from 'react';
 import TableTickets from './TableTickets';
+import TableTicketsAdmin from './TableTicketsAdmin';
 import EditableTable from './EditableTable';
 import { LocaleProvider, Menu } from 'antd';
 import ru_RU from 'antd/lib/locale-provider/ru_RU';
@@ -34,11 +35,7 @@ class App extends React.Component {
               <Redirect exact from="/" to="/ITSM/" />
               <Route exact path="/ITSM" component={TableTickets} />
               <Route exact path="/ITSM/edit" component={EditableTable} />
-              <Route
-                exact
-                path="/ITSM/admin"
-                component={() => <div>Admin page is not ready yet</div>}
-              />
+              <Route exact path="/ITSM/admin" component={TableTicketsAdmin} />
               <Route component={() => <div>404. Page Not Found</div>} />
             </Switch>
           </React.Fragment>
