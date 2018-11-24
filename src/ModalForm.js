@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Modal, Input, Radio, Select, Checkbox, DatePicker } from 'antd';
+import { Form, Modal, Input, Select, Checkbox, DatePicker } from 'antd';
 
 const ModalForm = Form.create()(
   class extends React.Component {
