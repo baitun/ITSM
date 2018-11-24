@@ -40,6 +40,9 @@ const columns = [
     title: 'Is open?',
     editable: true,
     render: (isopen, record) => <Checkbox disabled checked={isopen} />,
+    sorter: (a, b) => a.isopen - b.isopen,
+    onFilter: (value, record) => parseInt(value) === record.isopen,
+    filters: [{ text: 'Open', value: 1 }, { text: 'Close', value: 0 }],
   },
 ];
 

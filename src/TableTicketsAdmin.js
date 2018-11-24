@@ -51,10 +51,8 @@ class TableTickets extends React.Component {
     this.formRef = formRef;
   };
 
-  handleTableChange = (pagination, filters, sorter) => {
-    console.log(sorter);
-  };
   render() {
+    console.info('TableTicketsAdmin render');
     const columns_new = [
       ...columns,
       {
