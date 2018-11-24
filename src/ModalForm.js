@@ -14,7 +14,6 @@ const ModalForm = Form.create()(
         <Modal
           visible={visible}
           title="Create a new Ticket"
-          okText="Create"
           onCancel={onCancel}
           onOk={onCreate}
         >
