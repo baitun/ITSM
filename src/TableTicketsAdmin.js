@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Button } from 'antd';
+import { Table, Button, Popconfirm } from 'antd';
 import './TableTickets.css';
 import columns from './columns';
 import ModalForm from './ModalForm';
@@ -61,11 +61,21 @@ class TableTickets extends React.Component {
         title: 'operation',
         dataIndex: 'operation',
         render: (text, record) => (
-          <Button
-            shape="circle"
-            icon="edit"
-            onClick={() => this.showModal(record)}
-          />
+          <>
+            <Button
+              shape="circle"
+              icon="edit"
+              title="edit"
+              onClick={() => this.showModal(record)}
+            />
+            &nbsp;
+            <Popconfirm
+              title="Sure to cancel?"
+              onConfirm={() => console.log(record.key)}
+            >
+              <Button shape="circle" icon="delete" title="delete" />
+            </Popconfirm>
+          </>
         ),
       },
     ];
