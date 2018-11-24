@@ -90,6 +90,8 @@ class TableTickets extends React.Component {
           onCancel={this.handleCancel}
           onCreate={this.handleCreate}
         />
+        <br />
+        <br />
         <Table
           columns={columns_new}
           dataSource={tickets}
@@ -97,6 +99,7 @@ class TableTickets extends React.Component {
           onChange={this.handleTableChange}
           expandedRowRender={TicketDetailsAdmin}
           pagination={false}
+          size="middle"
           // scroll={{ x: true }}
         />
       </>
