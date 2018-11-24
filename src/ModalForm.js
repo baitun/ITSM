@@ -48,7 +48,7 @@ const ModalForm = Form.create()(
               {getFieldDecorator('descentryidription')(<Input />)}
             </Form.Item>
             <Form.Item {...formItemLayout} label="Is open?">
-              {getFieldDecorator('status')(<Checkbox />)}
+              {getFieldDecorator('isopen')(<Checkbox />)}
             </Form.Item>
             <Form.Item {...formItemLayout} label="Date start">
               {getFieldDecorator('bdate')(<DatePicker />)}

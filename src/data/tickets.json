@@ -5,7 +5,7 @@
     "system": "Billing",
     "description": "Billing doesn't work in Irkutsk from 6 am",
     "entryid": "000001",
-    "status": "Open",
+    "isopen": 1,
     "bdate": "2018-01-01 06:00:00",
     "edate": ""
   },
@@ -15,7 +15,7 @@
     "system": "CRM",
     "description": "There is something wrong with CRM sytem",
     "entryid": "000002",
-    "status": "Closed",
+    "isopen": 0,
     "bdate": "2018-02-01 09:00:00",
     "edate": "2018-02-01 10:00:00"
   },
@@ -25,7 +25,7 @@
     "system": "Mail",
     "description": "All users have a problem with mail",
     "entryid": "000003",
-    "status": "Closed",
+    "isopen": 0,
     "bdate": "2018-02-01 09:00:00",
     "edate": "2018-02-01 10:00:00"
   },
@@ -35,7 +35,7 @@
     "system": "Internet",
     "description": "Internet connection lost",
     "entryid": "000004",
-    "status": "Closed",
+    "isopen": 0,
     "bdate": "2018-02-01 09:00:00",
     "edate": "2018-02-01 10:00:00"
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Checkbox } from 'antd';
 
 const columns = [
   {
@@ -35,9 +36,10 @@ const columns = [
     ),
   },
   {
-    dataIndex: 'status',
-    title: 'Status',
+    dataIndex: 'isopen',
+    title: 'Is open?',
     editable: true,
+    render: (isopen, record) => <Checkbox disabled checked={isopen} />,
   },
 ];
 
