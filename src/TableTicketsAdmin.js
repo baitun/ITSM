@@ -100,6 +100,9 @@ class TableTickets extends React.Component {
           expandedRowRender={TicketDetailsAdmin}
           pagination={false}
           size="middle"
+          rowClassName={(record, index) =>
+            record.isopen ? 'ticket-opened' : 'ticket-closed'
+          }
           // scroll={{ x: true }}
         />
       </>

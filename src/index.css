@@ -3,3 +3,11 @@
 body {
   /* padding: 20px; */
 }
+
+.ticket-opened {
+  background-color: rgb(230, 255, 247);
+}
+
+.ticket-closed {
+  background-color: rgb(255, 247, 230);
+}
