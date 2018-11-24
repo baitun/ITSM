@@ -4,19 +4,13 @@ import TableTicketsAdmin from './TableTicketsAdmin';
 import EditableTable from './EditableTable';
 import { LocaleProvider, Menu } from 'antd';
 import ru_RU from 'antd/lib/locale-provider/ru_RU';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
+import { BrowserRouter, Route, Link, Switch, Redirect } from 'react-router-dom';
 
 class App extends React.Component {
   render() {
     return (
       <LocaleProvider locale={ru_RU}>
-        <Router>
+        <BrowserRouter>
           <>
             <Menu mode="horizontal" theme="dark">
               <Menu.Item>
@@ -39,7 +33,7 @@ class App extends React.Component {
               <Route component={() => <div>404. Page Not Found</div>} />
             </Switch>
           </>
-        </Router>
+        </BrowserRouter>
       </LocaleProvider>
     );
   }
