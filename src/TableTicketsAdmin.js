@@ -1,40 +1,34 @@
 import React from 'react';
 import { Table, Button, Popconfirm } from 'antd';
 import './TableTickets.css';
-import columns from './columns';
+import columns, { fields } from './columns';
 import ModalForm from './ModalForm';
 
 const tickets = require('./data/tickets.json');
 
 const TicketDetailsAdmin = record => {
-  return (
-    <>
-      <div>
-        <b>Description:</b> {record.description}
-      </div>
-      <div>
-        <b>Date start:</b> {record.bdate}
-      </div>
-      <div>
-        <b>Date end:</b> {record.edate}
-      </div>
-    </>
-  );
+  const additional_fields = fields.filter(val => !val.visible);
+  return additional_fields.map(f => (
+    <div key={f.dataIndex}>
+      <b>{f.title}:</b> {record[f.dataIndex]}
+    </div>
+  ));
 };
 class TableTickets extends React.Component {
   state = {
     visible: false,
+    record: {},
   };
 
-  showModal = () => {
-    this.setState({ visible: true });
+  showModal = record => {
+    this.setState({ visible: true, record });
   };
 
-  handleCancel = () => {
+  handleModalCancel = () => {
     this.setState({ visible: false });
   };
 
-  handleCreate = () => {
+  handleModalOk = () => {
     const form = this.formRef.props.form;
     form.validateFields((err, values) => {
       if (err) {
@@ -79,21 +73,21 @@ class TableTickets extends React.Component {
     ];
     return (
       <>
-        <Button type="primary" onClick={this.showModal}>
+        <Button type="primary" onClick={() => this.showModal}>
           New Ticket
         </Button>
         <ModalForm
           wrappedComponentRef={this.saveFormRef}
           visible={this.state.visible}
-          onCancel={this.handleCancel}
-          onCreate={this.handleCreate}
+          onCancel={this.handleModalCancel}
+          onOk={this.handleModalOk}
+          record={this.state.record}
         />
         <br />
         <br />
         <Table
           columns={columns_new}
           dataSource={tickets}
-          // rowKey="id"
           onChange={this.handleTableChange}
           expandedRowRender={TicketDetailsAdmin}
           pagination={false}
@@ -101,7 +95,6 @@ class TableTickets extends React.Component {
           rowClassName={(record, index) =>
             record.isopen ? 'ticket-opened' : 'ticket-closed'
           }
-          // scroll={{ x: true }}
         />
       </>
     );

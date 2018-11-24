@@ -1,11 +1,11 @@
 import React from 'react';
 import { Checkbox } from 'antd';
 
-const columns = [
+export const fields = [
   {
     dataIndex: 'locality',
     title: 'Locality (City)',
-    editable: true,
+    visible: true,
     sorter: (a, b) => ('' + a.locality).localeCompare(b.locality),
     onFilter: (value, record) => record.locality.indexOf(value) === 0,
     filters: [
@@ -18,13 +18,18 @@ const columns = [
   {
     dataIndex: 'system',
     title: 'System name',
-    editable: true,
+    visible: true,
     sorter: (a, b) => a.system > b.system,
+  },
+  {
+    dataIndex: 'description',
+    title: 'Description',
+    visible: false,
   },
   {
     dataIndex: 'entryid',
     title: 'BPM Ticket',
-    editable: true,
+    visible: true,
     render: entryid => (
       <a
         href={`https://bpmonline.com/?tt=${entryid}`}
@@ -38,12 +43,24 @@ const columns = [
   {
     dataIndex: 'isopen',
     title: 'Is open?',
-    editable: true,
+    visible: true,
     render: (isopen, record) => <Checkbox disabled checked={isopen} />,
     sorter: (a, b) => a.isopen - b.isopen,
     onFilter: (value, record) => parseInt(value) === record.isopen,
     filters: [{ text: 'Open', value: 1 }, { text: 'Close', value: 0 }],
   },
+  {
+    dataIndex: 'bdate',
+    title: 'Date start',
+    visible: false,
+  },
+  {
+    dataIndex: 'edate',
+    title: 'Date end',
+    visible: false,
+  },
 ];
+
+const columns = fields.filter(val => val.visible);
 
 export default columns;
