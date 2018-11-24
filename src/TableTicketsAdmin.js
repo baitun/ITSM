@@ -23,7 +23,7 @@ const TicketDetailsAdmin = record => {
 };
 class TableTickets extends React.Component {
   state = {
-    visible: true,
+    visible: false,
   };
 
   showModal = () => {
@@ -55,6 +55,20 @@ class TableTickets extends React.Component {
     console.log(sorter);
   };
   render() {
+    const columns_new = [
+      ...columns,
+      {
+        title: 'operation',
+        dataIndex: 'operation',
+        render: (text, record) => (
+          <Button
+            shape="circle"
+            icon="edit"
+            onClick={() => this.showModal(record)}
+          />
+        ),
+      },
+    ];
     return (
       <>
         <Button type="primary" onClick={this.showModal}>
@@ -67,7 +81,7 @@ class TableTickets extends React.Component {
           onCreate={this.handleCreate}
         />
         <Table
-          columns={columns}
+          columns={columns_new}
           dataSource={tickets}
           // rowKey="id"
           onChange={this.handleTableChange}
