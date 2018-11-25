@@ -1,61 +1,45 @@
 import React from 'react';
-import { Form, Modal, Input, Select, Checkbox, DatePicker } from 'antd';
+import { Form, Modal } from 'antd';
+import moment from 'moment';
+import { fields } from './columns';
 
 const ModalForm = Form.create()(
   class extends React.Component {
     render() {
-      const { visible, onCancel, onCreate, form } = this.props;
+      console.log('Render ModalForm, record =', this.props.record);
+      const { visible, onCancel, onOk, form, record } = this.props;
       const { getFieldDecorator } = form;
       const formItemLayout = {
         labelCol: { span: 6 },
         wrapperCol: { span: 18 },
       };
+      const formItems = fields.map(f => (
+        <Form.Item {...formItemLayout} label={f.title} key={f.dataIndex}>
+          {getFieldDecorator(f.dataIndex, {
+            rules: [
+              {
+                required: f.required,
+                message: `Please Input ${f.title}!`,
+              },
+            ],
+            valuePropName: f.dataIndex === 'isopen' ? 'checked' : 'value',
+            initialValue:
+              f.dataIndex === 'bdate' || f.dataIndex === 'edate'
+                ? moment(record[f.dataIndex]).isValid()
+                  ? moment(record[f.dataIndex])
+                  : null
+                : record[f.dataIndex],
+          })(f.formComponent)}
+        </Form.Item>
+      ));
       return (
         <Modal
           visible={visible}
-          title="Create a new Ticket"
+          title="Ticket properties"
           onCancel={onCancel}
-          onOk={onCreate}
+          onOk={onOk}
         >
-          <Form>
-            <Form.Item {...formItemLayout} label="Locality (City)">
-              {getFieldDecorator('title')(
-                <Select mode="multiple">
-                  <Select.Option value="0">Irkutsk</Select.Option>
-                  <Select.Option value="1">Rostov-on-Don</Select.Option>
-                  <Select.Option value="2">Saransk</Select.Option>
-                  <Select.Option value="3">Chelyabinsk</Select.Option>
-                </Select>
-              )}
-            </Form.Item>
-            <Form.Item {...formItemLayout} label="System">
-              {getFieldDecorator('system')(
-                <Select>
-                  <Select.Option value="0">BPM</Select.Option>
-                  <Select.Option value="1">CRM</Select.Option>
-                  <Select.Option value="2">Mail</Select.Option>
-                  <Select.Option value="3">Internet</Select.Option>
-                </Select>
-              )}
-            </Form.Item>
-            <Form.Item {...formItemLayout} label="Description">
-              {getFieldDecorator('description')(
-                <Input.TextArea autosize={{ minRows: 2 }} />
-              )}
-            </Form.Item>
-            <Form.Item {...formItemLayout} label="BPM Ticket ID">
-              {getFieldDecorator('descentryidription')(<Input />)}
-            </Form.Item>
-            <Form.Item {...formItemLayout} label="Is open?">
-              {getFieldDecorator('isopen')(<Checkbox />)}
-            </Form.Item>
-            <Form.Item {...formItemLayout} label="Date start">
-              {getFieldDecorator('bdate')(<DatePicker />)}
-            </Form.Item>
-            <Form.Item {...formItemLayout} label="Date end">
-              {getFieldDecorator('edate')(<DatePicker />)}
-            </Form.Item>
-          </Form>
+          <Form>{formItems}</Form>
         </Modal>
       );
     }
