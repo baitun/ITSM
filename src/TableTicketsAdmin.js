@@ -73,7 +73,7 @@ class TableTickets extends React.Component {
     ];
     return (
       <>
-        <Button type="primary" onClick={() => this.showModal}>
+        <Button type="primary" onClick={() => this.showModal(null)}>
           New Ticket
         </Button>
         <ModalForm
