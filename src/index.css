@@ -16,9 +16,9 @@ body {
 }
 
 .ticket-opened {
-  background-color: rgb(230, 255, 247);
+  background-color: rgb(245, 255, 240);
 }
 
 .ticket-closed {
-  background-color: rgb(255, 247, 230);
+  background-color: rgb(255, 241, 240);
 }
