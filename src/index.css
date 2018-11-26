@@ -4,15 +4,20 @@ body {
   /* padding: 20px; */
 }
 
-.logo {
-  /* width: 120px; */
-  /* height: 31px; */
-  /* background: rgba(255,255,255,.2); */
-  /* margin: 16px 24px 16px 0; */
+.h-logo {
   float: left;
   color: white;
   font-weight: bold;
   font-size: larger;
+  margin-right: 10px;
+}
+
+.h-user {
+  color: white;
+  position: absolute;
+  right: 50px;
+  top: 0;
+  cursor: pointer;
 }
 
 .ticket-opened {

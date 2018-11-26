@@ -2,7 +2,7 @@ import React from 'react';
 import TableTickets from './TableTickets';
 import TableTicketsAdmin from './TableTicketsAdmin';
 import EditableTable from './EditableTable';
-import { LocaleProvider, Menu, Layout } from 'antd';
+import { LocaleProvider, Menu, Layout, Icon } from 'antd';
 import ru_RU from 'antd/lib/locale-provider/ru_RU';
 import { BrowserRouter, Route, Link, Switch, Redirect } from 'react-router-dom';
 import { hasRole, isAllowed } from './auth';
@@ -26,26 +26,12 @@ class App extends React.Component {
         <BrowserRouter>
           <Layout>
             <Layout.Header>
-              <div className="logo">ITSM</div>
+              <div className="h-logo">ITSM</div>
               <Menu
                 mode="horizontal"
                 theme="dark"
                 style={{ lineHeight: '64px' }}
               >
-                <Menu.Item
-                  onClick={() =>
-                    this.setState(prevState => ({
-                      user: {
-                        roles: prevState.user.roles.includes('admin')
-                          ? ['user']
-                          : ['admin'],
-                      },
-                    }))
-                  }
-                >
-                  {user.roles.includes('admin') ? 'Logout' : 'Login'}
-                </Menu.Item>
-
                 <Menu.Item>
                   <Link to="/">Tickets</Link>
                 </Menu.Item>
@@ -55,6 +41,21 @@ class App extends React.Component {
                   </Menu.Item>
                 )}
               </Menu>
+              <div className="h-user">
+                <Icon
+                  type={user.roles.includes('admin') ? 'logout' : 'login'}
+                  title={user.roles.includes('admin') ? 'logout' : 'login'}
+                  onClick={() =>
+                    this.setState(prevState => ({
+                      user: {
+                        roles: prevState.user.roles.includes('admin')
+                          ? ['user']
+                          : ['admin'],
+                      },
+                    }))
+                  }
+                />
+              </div>
             </Layout.Header>
             <Layout.Content style={{ padding: '0 50px' }}>
               <div
@@ -81,11 +82,11 @@ class App extends React.Component {
                   <Route component={() => <div>404. Page Not Found</div>} />
                 </Switch>
               </div>
-              <Layout.Footer style={{ textAlign: 'center' }}>
-                IT Service Management ©{' '}
-                <a href="https://github.com/baitun/ITSM">baitun</a>
-              </Layout.Footer>
             </Layout.Content>
+            <Layout.Footer style={{ textAlign: 'center' }}>
+              IT Service Management ©{' '}
+              <a href="https://github.com/baitun/ITSM">baitun</a>
+            </Layout.Footer>
           </Layout>
         </BrowserRouter>
       </LocaleProvider>
