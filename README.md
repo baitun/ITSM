@@ -1,8 +1,8 @@
-# IT ticketing system
+# IT Service Management
 
 Issue tracking system / Trouble ticket system / Help Desk / Service Desk / IT service management (ITSM) 
 
-## Requirements
+## Built with
 
 - React
 - Ant Design
