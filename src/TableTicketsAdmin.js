@@ -7,12 +7,13 @@ import ModalForm from './ModalForm';
 const tickets = require('./data/tickets.json');
 
 const TicketDetailsAdmin = record => {
-  const additional_fields = fields.filter(val => !val.visible);
-  return additional_fields.map(f => (
-    <div key={f.dataIndex}>
-      <b>{f.title}:</b> {record[f.dataIndex]}
-    </div>
-  ));
+  return fields
+    .filter(val => !val.visible)
+    .map(f => (
+      <div key={f.dataIndex}>
+        <b>{f.title}:</b> {record[f.dataIndex]}
+      </div>
+    ));
 };
 class TableTickets extends React.Component {
   state = {

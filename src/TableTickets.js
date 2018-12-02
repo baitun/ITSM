@@ -1,24 +1,18 @@
 import React from 'react';
 import { Table } from 'antd';
 import './TableTickets.css';
-import columns from './columns';
+import columns, { fields } from './columns';
 
 const tickets = require('./data/tickets.json');
 
 const TicketDetails = record => {
-  return (
-    <>
-      <div>
-        <b>Description:</b> {record.description}
+  return fields
+    .filter(val => !val.visible)
+    .map(f => (
+      <div key={f.dataIndex}>
+        <b>{f.title}:</b> {record[f.dataIndex]}
       </div>
-      <div>
-        <b>Date start:</b> {record.bdate}
-      </div>
-      <div>
-        <b>Date end:</b> {record.edate}
-      </div>
-    </>
-  );
+    ));
 };
 class TableTickets extends React.Component {
   handleTableChange = (pagination, filters, sorter) => {
@@ -29,11 +23,13 @@ class TableTickets extends React.Component {
       <Table
         columns={columns}
         dataSource={tickets}
-        // rowKey="id"
         onChange={this.handleTableChange}
         expandedRowRender={TicketDetails}
         pagination={false}
-        // scroll={{ x: true }}
+        size="middle"
+        rowClassName={(record, index) =>
+          record.isopen ? 'ticket-opened' : 'ticket-closed'
+        }
       />
     );
   }
