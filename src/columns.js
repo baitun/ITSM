@@ -4,7 +4,7 @@ import { Input, Select, Checkbox, DatePicker } from 'antd';
 export const fields = [
   {
     dataIndex: 'locality',
-    title: 'Locality (City)',
+    title: 'Место (город)',
     visible: true,
     required: true,
     sorter: (a, b) => ('' + a.locality).localeCompare(b.locality),
@@ -26,7 +26,7 @@ export const fields = [
   },
   {
     dataIndex: 'system',
-    title: 'System name',
+    title: 'Система',
     visible: true,
     required: false,
     sorter: (a, b) => a.system > b.system,
@@ -41,7 +41,7 @@ export const fields = [
   },
   {
     dataIndex: 'description',
-    title: 'Description',
+    title: 'Описание',
     visible: false,
     required: false,
     formComponent: <Input.TextArea autosize={{ minRows: 2 }} />,
@@ -64,7 +64,7 @@ export const fields = [
   },
   {
     dataIndex: 'isopen',
-    title: 'Is open?',
+    title: 'Открыта?',
     visible: true,
     required: false,
     render: (isopen, record) => <Checkbox disabled checked={isopen} />,
@@ -75,14 +75,14 @@ export const fields = [
   },
   {
     dataIndex: 'bdate',
-    title: 'Date start',
+    title: 'Дата начала',
     visible: false,
     required: false,
     formComponent: <DatePicker />,
   },
   {
     dataIndex: 'edate',
-    title: 'Date end',
+    title: 'Дата завершения',
     visible: false,
     required: false,
     formComponent: <DatePicker />,
