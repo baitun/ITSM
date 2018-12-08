@@ -41,7 +41,7 @@ class App extends React.Component {
                   </Menu.Item>
                 )}
               </Menu>
-              {/* <div className="h-user">
+              <div className="h-user">
                 <Icon
                   type={user.roles.includes('admin') ? 'logout' : 'login'}
                   title={user.roles.includes('admin') ? 'logout' : 'login'}
@@ -55,7 +55,7 @@ class App extends React.Component {
                     }))
                   }
                 />
-              </div> */}
+              </div>
             </Layout.Header>
             <Layout.Content style={{ padding: '0 50px' }}>
               <div
