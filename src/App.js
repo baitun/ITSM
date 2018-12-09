@@ -1,7 +1,6 @@
 import React from 'react';
 import TableTickets from './TableTickets';
 import TableTicketsAdmin from './TableTicketsAdmin';
-import EditableTable from './EditableTable';
 import { LocaleProvider, Menu, Layout, Icon } from 'antd';
 import ru_RU from 'antd/lib/locale-provider/ru_RU';
 import { BrowserRouter, Route, Link, Switch, Redirect } from 'react-router-dom';
@@ -70,8 +69,6 @@ class App extends React.Component {
                 <Switch>
                   <Redirect exact from="/" to="/ITSM/" />
                   <Route exact path="/ITSM" component={TableTickets} />
-                  {/* @TODO remove it */}
-                  <Route exact path="/ITSM/edit" component={EditableTable} />
                   {hasRole(user, ['admin']) && (
                     <Route
                       exact
