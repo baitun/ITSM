@@ -6,7 +6,7 @@ import ModalForm from './ModalForm';
 
 const tickets = require('./data/tickets.json');
 
-const TicketDetailsAdmin = record => {
+const TicketDetails = record => {
   return fields
     .filter(val => !val.visible)
     .map(f => (
@@ -17,16 +17,16 @@ const TicketDetailsAdmin = record => {
 };
 class TableTickets extends React.Component {
   state = {
-    visible: false,
-    record: {},
+    isModalOpen: false,
+    modalRecord: {},
   };
 
-  showModal = record => {
-    this.setState({ visible: true, record });
+  showModal = modalRecord => {
+    this.setState({ isModalOpen: true, modalRecord });
   };
 
   handleModalCancel = () => {
-    this.setState({ visible: false });
+    this.setState({ isModalOpen: false });
   };
 
   handleModalOk = () => {
@@ -38,7 +38,7 @@ class TableTickets extends React.Component {
 
       console.log('Received values of form: ', values);
       form.resetFields();
-      this.setState({ visible: false });
+      this.setState({ isModalOpen: false });
     });
   };
 
@@ -48,11 +48,11 @@ class TableTickets extends React.Component {
 
   render() {
     console.info('TableTicketsAdmin render');
-    const columns_new = [
+    const columnsWithButtons = [
       ...columns,
       {
-        title: 'operation',
-        dataIndex: 'operation',
+        title: 'Action',
+        dataIndex: 'action',
         render: (text, record) => (
           <>
             <Button
@@ -79,18 +79,17 @@ class TableTickets extends React.Component {
         </Button>
         <ModalForm
           wrappedComponentRef={this.saveFormRef}
-          visible={this.state.visible}
+          visible={this.state.isModalOpen}
           onCancel={this.handleModalCancel}
           onOk={this.handleModalOk}
-          record={this.state.record}
+          record={this.state.modalRecord}
         />
         <br />
         <br />
         <Table
-          columns={columns_new}
+          columns={columnsWithButtons}
           dataSource={tickets}
-          onChange={this.handleTableChange}
-          expandedRowRender={TicketDetailsAdmin}
+          expandedRowRender={TicketDetails}
           pagination={false}
           size="middle"
           rowClassName={(record, index) =>

@@ -15,15 +15,11 @@ const TicketDetails = record => {
     ));
 };
 class TableTickets extends React.Component {
-  handleTableChange = (pagination, filters, sorter) => {
-    console.log(sorter);
-  };
   render() {
     return (
       <Table
         columns={columns}
         dataSource={tickets}
-        onChange={this.handleTableChange}
         expandedRowRender={TicketDetails}
         pagination={false}
         size="middle"
