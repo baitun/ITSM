@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Link, Switch, Redirect } from 'react-router-dom';
 import { hasRole, isAllowed } from './auth';
 
 const user = {
-  roles: ['user'],
+  roles: ['admin'],
   rights: ['can_view_articles'],
 };
 
