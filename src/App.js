@@ -32,11 +32,11 @@ class App extends React.Component {
                 style={{ lineHeight: '64px' }}
               >
                 <Menu.Item>
-                  <Link to="/">Tickets</Link>
+                  <Link to="/">Просмотр записей</Link>
                 </Menu.Item>
                 {hasRole(user, ['admin']) && (
                   <Menu.Item>
-                    <Link to="admin">Admin</Link>
+                    <Link to="admin">Администрирование</Link>
                   </Menu.Item>
                 )}
               </Menu>

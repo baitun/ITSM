@@ -75,7 +75,7 @@ class TableTickets extends React.Component {
     return (
       <>
         <Button type="primary" onClick={() => this.showModal(null)}>
-          New Ticket
+          Добавить запись
         </Button>
         <ModalForm
           wrappedComponentRef={this.saveFormRef}
