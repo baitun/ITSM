@@ -13,25 +13,33 @@ const ModalForm = Form.create()(
         labelCol: { span: 6 },
         wrapperCol: { span: 18 },
       };
-      const formItems = fields.map(f => (
-        <Form.Item {...formItemLayout} label={f.title} key={f.dataIndex}>
-          {getFieldDecorator(f.dataIndex, {
-            rules: [
-              {
-                required: f.required,
-                message: `Please Input ${f.title}!`,
-              },
-            ],
-            valuePropName: f.dataIndex === 'isopen' ? 'checked' : 'value',
-            initialValue:
-              f.dataIndex === 'bdate' || f.dataIndex === 'edate'
-                ? moment(record[f.dataIndex]).isValid()
-                  ? moment(record[f.dataIndex])
-                  : null
-                : record[f.dataIndex],
-          })(f.formComponent)}
-        </Form.Item>
-      ));
+      const formItems = fields.map(f => {
+        let initialValue = null;
+        if (record) {
+          if (
+            (f.dataIndex === 'bdate' || f.dataIndex === 'edate') &&
+            moment(record[f.dataIndex]).isValid()
+          ) {
+            initialValue = moment(record[f.dataIndex]);
+          } else {
+            initialValue = record[f.dataIndex];
+          }
+        }
+        return (
+          <Form.Item {...formItemLayout} label={f.title} key={f.dataIndex}>
+            {getFieldDecorator(f.dataIndex, {
+              rules: [
+                {
+                  required: f.required,
+                  message: `Please Input ${f.title}!`,
+                },
+              ],
+              valuePropName: f.dataIndex === 'isopen' ? 'checked' : 'value',
+              initialValue: initialValue,
+            })(f.formComponent)}
+          </Form.Item>
+        );
+      });
       return (
         <Modal
           visible={visible}
