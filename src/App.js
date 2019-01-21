@@ -25,7 +25,7 @@ class App extends React.Component {
         <BrowserRouter>
           <Layout>
             <Layout.Header>
-              <div className="h-logo">ITSM</div>
+              <div className="h-logo">IVR</div>
               <Menu
                 mode="horizontal"
                 theme="dark"
@@ -67,12 +67,12 @@ class App extends React.Component {
                 {/* <h1>IT Service Management</h1> */}
 
                 <Switch>
-                  <Redirect exact from="/" to="/ITSM/" />
-                  <Route exact path="/ITSM" component={TableTickets} />
+                  <Redirect exact from="/" to="/IVR/" />
+                  <Route exact path="/IVR" component={TableTickets} />
                   {hasRole(user, ['admin']) && (
                     <Route
                       exact
-                      path="/ITSM/admin"
+                      path="/IVR/admin"
                       component={TableTicketsAdmin}
                     />
                   )}
@@ -81,8 +81,7 @@ class App extends React.Component {
               </div>
             </Layout.Content>
             <Layout.Footer style={{ textAlign: 'center' }}>
-              IT Service Management ©{' '}
-              <a href="https://github.com/baitun/ITSM">baitun</a>
+              IVR Management ©
             </Layout.Footer>
           </Layout>
         </BrowserRouter>

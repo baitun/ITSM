@@ -1,6 +1,6 @@
 # IT Service Management
 
-Issue tracking system / Trouble ticket system / Help Desk / Service Desk / IT service management (ITSM) 
+Issue tracking system / Trouble ticket system / Help Desk / Service Desk / IT service management (IVR) 
 
 ## Built with
 
