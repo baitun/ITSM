@@ -2,41 +2,25 @@
   {
     "key": "1",
     "locality": "Irkutsk",
-    "system": "Billing",
-    "description": "Billing doesn't work in Irkutsk from 6 am",
-    "entryid": "000001",
-    "isopen": 1,
-    "bdate": "2018-01-01 06:00:00",
-    "edate": ""
+    "system": "611",
+    "description": "Billing doesn't work in Irkutsk from 6 am"
   },
   {
     "key": "2",
     "locality": "Rostov-on-Don",
-    "system": "CRM",
-    "description": "There is something wrong with CRM sytem",
-    "entryid": "000002",
-    "isopen": 0,
-    "bdate": "2018-02-01 09:00:00",
-    "edate": "2018-02-01 10:00:00"
+    "system": "611",
+    "description": "There is something wrong with CRM sytem"
   },
   {
     "key": "3",
     "locality": "Saransk",
-    "system": "Mail",
-    "description": "All users have a problem with mail",
-    "entryid": "000003",
-    "isopen": 0,
-    "bdate": "2018-02-01 09:00:00",
-    "edate": "2018-02-01 10:00:00"
+    "system": "611",
+    "description": "All users have a problem with mail"
   },
   {
     "key": "4",
     "locality": "Chelyabinsk",
-    "system": "Internet",
-    "description": "Internet connection lost",
-    "entryid": "000004",
-    "isopen": 0,
-    "bdate": "2018-02-01 09:00:00",
-    "edate": "2018-02-01 10:00:00"
+    "system": "611",
+    "description": "Internet connection lost"
   }
 ]
