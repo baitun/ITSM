@@ -1,26 +1,26 @@
 [
   {
     "key": "1",
-    "locality": "Irkutsk",
+    "locality": "Иркутск",
     "system": "611",
-    "description": "Billing doesn't work in Irkutsk from 6 am"
+    "description": "Задача организации, в особенности же консультация с широким активом требуют определения и уточнения позиций."
   },
   {
     "key": "2",
-    "locality": "Rostov-on-Don",
+    "locality": "Ростов на Дону",
     "system": "611",
-    "description": "There is something wrong with CRM sytem"
+    "description": "Значимость этих проблем настолько очевидна, что укрепление и развитие структуры способствует подготовки и реализации соответствующий условий активизации."
   },
   {
     "key": "3",
-    "locality": "Saransk",
+    "locality": "Саранск",
     "system": "611",
-    "description": "All users have a problem with mail"
+    "description": "Идейные соображения высшего порядка, а также реализация намеченных плановых заданий играет важную роль в формировании направлений прогрессивного развития."
   },
   {
     "key": "4",
-    "locality": "Chelyabinsk",
+    "locality": "Челябинск",
     "system": "611",
-    "description": "Internet connection lost"
+    "description": "Равным образом сложившаяся структура организации влечет за собой процесс внедрения и модернизации модели развития."
   }
 ]
